@@ -165,10 +165,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -196,4 +196,12 @@ smart_borders on
 
 bindsym $mod+z exec rofi -show run -lines 20 -opacity "85" -bw 0
 
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/test"
+exec_always feh --bg-scale "$HOME/.config/wallpapers/kittboard.png"
+
+bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
+
+bindsym Print exec --no-startup-id maim "$HOME/Pictures/screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+
+exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/firefox'
