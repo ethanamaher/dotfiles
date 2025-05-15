@@ -196,7 +196,7 @@ smart_borders on
 
 bindsym $mod+z exec rofi -show run -lines 20 -opacity "85" -bw 0
 
-exec_always feh --bg-scale "$HOME/.config/wallpapers/kittboard.png"
+exec_always feh --bg-scale "$HOME/.config/wallpapers/kittyboard.png"
 
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
