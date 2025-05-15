@@ -1,14 +1,13 @@
 return {
     {
-        "ethanamaher/todo-telescope.nvim",
+        "ethanamaher/todo-sidebar.nvim",
 
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim",
         },
 
         config = function()
-            require("todo-telescope").setup({
+            require("todo-sidebar").setup({
                 -- uncomment lines to use custom options
                 --
                 -- define custom keyword list
@@ -17,8 +16,19 @@ return {
                 -- case sensitivity
                 -- case_sensitive = false,
                 --
-                -- max number of results in telescop picker
-                -- max_results = 500
+                -- max number of results in sidebar window
+                -- max_results = 500,
+
+                -- sidebar = {
+                --    width = 40,
+                --     position = "right",
+                --    auto_focus = false,
+                --     auto_close_on_jump = false,
+                --     keymaps = {
+                --         jmp_to = "<CR>",
+                --         -- TODO add keybinds for various things
+                --   },
+                --},
             })
         end
     }
