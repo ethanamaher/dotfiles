@@ -24,15 +24,16 @@ return {
 
         require("fidget").setup({})
         require("mason").setup({
-            version = "^1.0.0",
+            --version = "^1.0.0",
         })
         require("mason-lspconfig").setup({
-            version = "^1.0.0",
+            --version = "^1.0.0",
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
 --                "gopls",
                 "pylsp",
+                "clangd",
             },
             handlers = {
                 function(server_name) -- default handler (optional)

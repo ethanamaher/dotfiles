@@ -12,6 +12,7 @@ return {
         config = function()
             local ls = require("luasnip")
             ls.filetype_extend("javascript", { "jsdoc" }, "c")
+            ls.filetype_extend("lua", { "luadoc" }, "c")
 
             --- TODO: What is expand?
             vim.keymap.set({"i"}, "<C-s>e", function() ls.expand() end, {silent = true})
