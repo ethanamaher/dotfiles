@@ -30,6 +30,9 @@ return {
                 --   },
                 --},
             })
+
+            vim.keymap.set("n", "<leader>tst", "<cmd>TodoSidebarToggle<CR>",
+                        { desc = "Toggle Todo Sidebar" })
         end
     }
 }
