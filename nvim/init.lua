@@ -3,9 +3,20 @@ vim.o.relativenumber = true
 vim.o.signcolumn = "yes"
 vim.o.wrap = false
 vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = false
+vim.o.smartindent = true
 vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undodir = os.getenv("HOME") .. "/.nvim/undo"
+vim.o.undofile = true
+vim.o.hlsearch = false
+vim.o.incsearch = true
+vim.o.termguicolors = true
 vim.g.mapleader = ' '
 vim.o.winborder = 'rounded'
+vim.o.statusline = "[%n] %{&ff}%y %<%F %=row:%l/%L col:%c %m%r%w"
 
 vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>')
 vim.keymap.set('n', '<leader>w', ':write<CR>')
@@ -32,6 +43,17 @@ vim.cmd("set completeopt+=noselect")
 
 require "mini.pick".setup()
 require "oil".setup()
+
+require "gruvbox".setup({
+	italic = {
+		strings = false
+	}
+})
+require "vague".setup({
+	style = {
+		strings = "none"
+	}
+})
 
 vim.lsp.enable({ "lua_ls", "basedpyright", "ruff" })
 
