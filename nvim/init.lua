@@ -29,6 +29,8 @@ vim.pack.add({
 	{ src = "https://github.com/echasnovski/mini.pick" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/chomosuke/typst-preview.nvim" },
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/ethanamaher/todo-sidebar.nvim" },
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -54,6 +56,10 @@ require "vague".setup({
 		strings = "none"
 	}
 })
+
+local todosidebar = require "todo-sidebar"
+todosidebar.setup()
+vim.keymap.set('n', '<leader>sb', function() todosidebar.sidebar:toggle() end)
 
 vim.lsp.enable({ "lua_ls", "basedpyright", "ruff" })
 
